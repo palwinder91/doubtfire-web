@@ -1,0 +1,12 @@
+<div class="confirmation-modal">
+  <h2 mat-dialog-title>{{data.title}}</h2>
+      <mat-dialog-content>
+      <small>Please confirm that you want to perform this action.</small>
+      <div>{{data.message}}</div>
+      </mat-dialog-content>
+      <mat-dialog-actions>
+      <button (click)="cancelAction()" mat-button mat-dialog-close>No</button> <!--ng-click="cancelAction() -->
+        <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+      <button (click)="confirmAction()"  mat-button [mat-dialog-close]="true">Yes</button>  <!--ng-click="confirmAction() -->
+      </mat-dialog-actions>
+</div>

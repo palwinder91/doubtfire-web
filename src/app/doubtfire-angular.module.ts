@@ -14,12 +14,15 @@ import { AboutDoubtfireModalService } from "src/app/common/modals/about-doubtfir
 import { AboutDoubtfireModal, AboutDoubtfireModalContent } from 'src/app/common/modals/about-doubtfire-modal/about-doubtfire-modal.component'
 import { DoubtfireConstants } from 'src/app/config/constants/doubtfire-constants';
 
+import { ConfirmationDialog } from "src/app/common/modals/confirmation-modal/confirmation-modal";
+
 import { DoubtfireAngularJSModule } from 'src/app/doubtfire-angularjs.module';
 import { HttpErrorInterceptor } from './common/services/http-error.interceptor';
 
 @NgModule({
   declarations: [
-    AboutDoubtfireModalContent
+    AboutDoubtfireModalContent,
+    ConfirmationDialog
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { HttpErrorInterceptor } from './common/services/http-error.interceptor';
     useClass: HttpErrorInterceptor,
     multi: true
   }, AboutDoubtfireModal, AboutDoubtfireModalService, DoubtfireConstants],
-  entryComponents: [AboutDoubtfireModalContent]
+  entryComponents: [AboutDoubtfireModalContent,ConfirmationDialog]
 })
 export class DoubtfireAngularModule {
   constructor(private upgrade: UpgradeModule, private constants: DoubtfireConstants, private title: Title) {

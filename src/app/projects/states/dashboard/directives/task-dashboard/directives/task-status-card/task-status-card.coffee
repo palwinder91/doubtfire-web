@@ -38,10 +38,7 @@ angular.module('doubtfire.projects.states.dashboard.directives.task-dashboard.di
     # Triggers a new task status
     $scope.triggerTransition = (trigger) ->
       if trigger == 'ready_to_mark' && $scope.task.isPastTargetDate() && !$scope.task.isOverdue()
-        ConfirmationModal.show(
-          "Request Extensions?",
-          "This task is past the target due date, so you will need to request an extension to get feedback. Use confirm to request extensions and proceed with the submission.",
-          () -> extendAndSubmit(trigger))
+        ConfirmationModal.show()
       else
         $scope.task.triggerTransition(trigger, $scope.unitRole)
 
